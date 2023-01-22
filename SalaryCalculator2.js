@@ -1,36 +1,43 @@
 console.log("SalaryCalculator2.js is working!!");
 $(document).ready(onReady);
 
+let monthlyEmployeeCosts = 0;
+
 let employees = [
     {
         firstName:'Victor',
         lastName:'Brown',
         idNumber: 17184,
         jobTitle: 'Executive Assistant',
-        annualSalary: `$65,000`,
+        annualSalary: 65000,
     },
     {
         firstName:'James',
         lastName:'Johnson',
         idNumber: 16713,
         jobTitle: 'Branch Manager',
-        annualSalary: `$73,000`,
+        annualSalary: 73000,
     },
     {
         firstName:'Candice',
         lastName:'Cooper',
         idNumber: 17282,
         jobTitle: 'Human Resources',
-        annualSalary: `$56,000`,
+        annualSalary: 56000,
     },
     {
     firstName:'Lupita',
         lastName:'Garcia',
         idNumber: 16841,
         jobTitle: 'Accountant',
-        annualSalary: `$68,500`,
+        annualSalary: 68500,
     },
 ];
+function monthlyEmployeeCosts() {
+
+    console.log('Calculate Monthly Employee Costs', monthlyEmployeeCosts);
+    render();
+}
 
 function onAddEmployee(evt){
     //Do not refresh page plz
@@ -100,7 +107,7 @@ function render() {
             <td>${employee.jobTitle}</td>
             <td>${employee.annualSalary}</td>
             <td>
-            <button class='deleteEmployeeBtn'></button
+            <button class='deleteEmployeeBtn'></button>
             </td>
         </tr>
         `);
