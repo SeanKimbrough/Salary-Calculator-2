@@ -33,9 +33,11 @@ let employees = [
         annualSalary: 68500,
     },
 ];
-function monthlyEmployeeCosts() {
-
-    console.log('Calculate Monthly Employee Costs', monthlyEmployeeCosts);
+function monthlyEmployeeBudget() {
+    monthlyEmployeeCosts=0;
+    for (let employee of employees){
+        monthlyEmployeeCosts += employee.annualSalary/12 
+    }
     render();
 }
 
@@ -58,6 +60,8 @@ function onAddEmployee(evt){
     //add the object to the array 
     // render (); with the new employee in array
     employees.push(newEmployee);
+
+    monthlyEmployeeBudget ();
     render();
 
 }
@@ -94,6 +98,15 @@ function onDeleteEmployee (){
 
 function render() {
     console.log('in render ()');
+
+    $("#Monthly-Employee-Costs").text(`${monthlyEmployeeCosts}`);
+if (monthlyEmployeeCosts > 20000){
+    $(`Monthly-Employee-Costs`).css('background-color', 'red');
+    }else {
+        $(`Monthly-Employee-Costs`).css('background-color', 'white')
+
+    }
+
 
     for (let employee of employees) {
         console.log('for annual Salary...', employee.name);
